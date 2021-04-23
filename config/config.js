@@ -1,15 +1,15 @@
 exports.creds = {
     identityMetadata: 'https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration', 
 
-    clientID: '<add your own>',
+    clientID: '8730505d-0f89-42ec-94ff-b3a19dad6a4e',
   
-    clientSecret: '<add your own>', 
+    clientSecret: 'Q3iEp2BT~6UEJ.4fB7m.UfLg7vu~OYjnTT', 
   
     responseType: 'code id_token', 
   
     responseMode: 'form_post', 
   
-    redirectUrl: 'http://localhost:2121/auth/openid/return', 
+    redirectUrl: 'https://todo-mvc-auth-weGoGet.mariames.repl.co/auth/openid/return', 
   
     allowHttpForRedirectUrl: true,
   
@@ -37,7 +37,7 @@ exports.creds = {
     clockSkew: null,
   };
   
-  exports.destroySessionUrl = 'http://localhost:2121';
+  exports.destroySessionUrl = 'https://todo-mvc-auth-weGoGet.mariames.repl.co';
   
   exports.useMongoDBSessionStore = false;
   
