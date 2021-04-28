@@ -8,7 +8,7 @@ const MongoStore = require('connect-mongo')(session)
 const connectDB = require('./config/database')
 const authRoutes = require('./routes/auth')
 const homeRoutes = require('./routes/home')
-const todoRoutes = require('./routes/todos')
+const postRoutes = require('./routes/post')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -46,7 +46,7 @@ app.use(passport.session())
 // These tell router to access depending on what is requested
 app.use('/', homeRoutes)
 app.use('/auth', authRoutes)
-app.use('/todos', todoRoutes)
+app.use('/post', postRoutes)
  
 //It indicates which Port to use, and if heroku assigns one, use it, if not use our port
 app.listen(process.env.PORT, ()=>{

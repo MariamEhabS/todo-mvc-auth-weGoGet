@@ -5,19 +5,18 @@ const router = express.Router()
 
 
 router.get('/login',
-  function(req, res, next) {
-    passport.authenticate('azuread-openidconnect', 
-      { 
-        response: res,                      
-        resourceURL: config.resourceURL,    
-        customState: 'my_state',            
-        failureRedirect: '/' 
-      }
-    )(req, res, next);
-  },
+  // function(req, res, next) {
+  //   passport.authenticate('azuread-openidconnect', 
+  //     { 
+  //       response: res,                      
+  //       resourceURL: config.resourceURL,    
+  //       customState: 'my_state',            
+  //       failureRedirect: '/' 
+  //     }
+  //   )(req, res, next);
+  // },
   function(req, res) {
-    console.log('Login was called in the Sample');
-    res.redirect('/todos');
+    res.redirect('/post');
 });
 
 router.get('/openid/return',
@@ -31,7 +30,7 @@ router.get('/openid/return',
   },
   function(req, res) {
     console.log('We received a return from AzureAD.');
-    res.redirect('/todos');
+    res.redirect('/posts');
   });
 
 router.post('/openid/return',
@@ -45,7 +44,7 @@ router.post('/openid/return',
   },
   function(req, res) {
     console.log('We received a return from AzureAD.');
-    res.redirect('/todos');
+    res.redirect('/posts');
   });
 
 

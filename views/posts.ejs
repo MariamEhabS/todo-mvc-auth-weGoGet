@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Post</h1>
+    <ul>
+    <% posts.forEach( post => { %>
+            <li class='postItem' data-id='<%=post._id%>'>
+              <div>
+                  <h2><%=post.title%></h2>
+                  <h3><%=post.date%></h3>
+                  <p><%=post.text%></p>
+                  <span class='del'> Delete </span>
+              </div>
+            </li>
+    <% }) %>    
+    </ul>
+
+    <form action="/post/createPost" method='POST'>
+        <input type="text" placeholder="Enter Title" name='title'>
+        <input type="text" placeholder="Enter Text" name='text'>
+        <input type="submit">
+    </form>
+
+    <a href="../auth/logout">Logout</a>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
